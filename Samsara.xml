@@ -50,6 +50,7 @@
         <leggings color="667F33" locked="true" unbreakable="true">leather leggings</leggings>
         <boots color="667F33" locked="true" unbreakable="true">leather boots</boots>
         <potion duration="oo">speed</potion>
+        <potion duration="oo">blindness</potion>
     </kit>
 </kits>
 <hunger>
