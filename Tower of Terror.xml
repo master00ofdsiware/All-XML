@@ -14,6 +14,14 @@
     <team id="humans" show-name-tags="allies" color="dark aqua" max="6">Humans</team>
 </teams>
 <time result="slender">4m</time>
+<killreward>
+    <filter>
+        <all>
+            <team>slender</team>
+        </all>
+    </filter>
+    <item amount = "2" material="ender pearl"/>
+</killreward>
 <score>
     <limit>8</limit>
 </score>
