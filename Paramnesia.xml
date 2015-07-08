@@ -3,19 +3,16 @@
 <version>1.0.0</version>
 <objective>Humans have to capture all 8 pages (flags) to win!</objective>
 <authors>
-    <author uuid="af56fc4a-51d2-4a6e-b020-2c6d272b9cbf"/> <!--  Ale  -->
     <author uuid="f876b863-1ccd-4ae2-acad-8a09e2209e81"/> <!--  _DISTRACTION_  -->
+    <author uuid="af56fc4a-51d2-4a6e-b020-2c6d272b9cbf"/> <!--  Ale  -->
 </authors>
 <contributors>
     <contributor uuid="dff980ed-9f69-491e-b79c-30c21350baf2"/> <!--  DoomRobotBoy  -->
 </contributors>
 <teams>
-    <team id="slender" show-name-tags="allies" color="white" max="2" respawn-limit="1">Slendermen</team>
-    <team id="humans" show-name-tags="allies" color="dark green" max="5">Humans</team>
+    <team id="slender" show-name-tags="allies" color="white" max="2">Slendermen</team>
+    <team id="humans" show-name-tags="allies" color="dark green" max="6">Humans</team>
 </teams>
-<blitz>
-    <lives>3</lives>
-</blitz>
 <time result="slender">4m</time>
 <score>
     <limit>8</limit>
@@ -45,11 +42,12 @@
         <chestplate color="191919" enchantment="protection environmental:3" locked="true" unbreakable="true">leather chestplate</chestplate>
         <leggings color="191919" locked="true" unbreakable="true">leather leggings</leggings>
         <boots color="191919" locked="true" unbreakable="true">leather boots</boots>
+        <potion duration="oo">slow</potion>
     </kit>
     <kit id="humans-kit">
         <leggings color="667F33" locked="true" unbreakable="true">leather leggings</leggings>
         <boots color="667F33" locked="true" unbreakable="true">leather boots</boots>
-        <potion duration="oo">speed</potion>
+        <potion duration="oo" amplifier="3">speed</potion>
         <potion duration="oo">blindness</potion>
     </kit>
 </kits>
@@ -58,6 +56,7 @@
 </hunger>
 <filters>
     <team id="only-humans">humans</team>
+    <time id="flag-respawns">6000</time>
 </filters>
 <regions>
     <cylinder id="net-region" base="159.5,61,11.5" radius="2" height="0"/>
@@ -67,40 +66,43 @@
         </region>
     </apply>
 </regions>
-<flags>
-    <flag id="flag-1" name="Page 1" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
-        <post permanent="true" owner="slender" yaw="135">185.5,62,13.5</post>
-        <net region="net-region" points="1"/>
+<flags> 
+    <flag id="flag-1" name="Page 1" owner="slender" color="white" pickup-filter="only-humans">
+        <post owner="slender" yaw="135">185.5,62,13.5</post>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-2" name="Page 2" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
-        <post permanent="true" owner="slender" yaw="67">191.5,61,-17.5</post>
-        <net region="net-region" points="1"/>
+    <flag id="flag-2" name="Page 2" owner="slender" color="white" pickup-filter="only-humans">
+        <post owner="slender" yaw="67">191.5,61,-17.5</post>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-3" name="Page 3" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
-        <post permanent="true" owner="slender" yaw="90">198.5,61,21.5</post>
-        <net region="net-region" points="1"/>
+    <flag id="flag-3" name="Page 3" owner="slender" color="white" pickup-filter="only-humans">
+        <post owner="slender" yaw="90">198.5,61,21.5</post>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-4" name="Page 4" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
-        <post permanent="true" owner="slender" yaw="90">216.5,61,4.5</post>
-        <net region="net-region" points="1"/>
+    <flag id="flag-4" name="Page 4" owner="slender" color="white" pickup-filter="only-humans">
+        <post owner="slender" yaw="90">216.5,61,4.5</post>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-5" name="Page 5" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
-        <post permanent="true" owner="slender" yaw="135">219.5,61,32.5</post>
-        <net region="net-region" points="1"/>
+    <flag id="flag-5" name="Page 5" owner="slender" color="white" pickup-filter="only-humans">
+        <post owner="slender" yaw="135">219.5,61,32.5</post>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-6" name="Page 6" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
-        <post permanent="true" owner="slender" yaw="90">227.5,61,-16.5</post>
-        <net region="net-region" points="1"/>
+    <flag id="flag-6" name="Page 6" owner="slender" color="white" pickup-filter="only-humans">
+        <post owner="slender" yaw="90">227.5,61,-16.5</post>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-7" name="Page 7" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
-        <post permanent="true" owner="slender" yaw="90">245.5,61,29.5</post>
-        <net region="net-region" points="1"/>
+    <flag id="flag-7" name="Page 7" owner="slender" color="white" pickup-filter="only-humans">
+        <post owner="slender" yaw="90">245.5,61,29.5</post>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-8" name="Page 8" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
-        <post permanent="true" owner="slender" yaw="115">247.5,61,-0.5</post>
-        <net region="net-region" points="1"/>
+    <flag id="flag-8" name="Page 8" owner="slender" color="white" pickup-filter="only-humans">
+        <post owner="slender" yaw="115">247.5,61,-0.5</post>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
 </flags>
+<killreward>
+    <item amount="2">ender pearl</item>
+</killreward>
 <itemremove>
     <item>wood sword</item>
     <item>ender pearl</item>
