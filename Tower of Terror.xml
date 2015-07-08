@@ -14,6 +14,9 @@
     <team id="humans" show-name-tags="allies" color="dark aqua" max="6">Humans</team>
 </teams>
 <time result="slender">4m</time>
+<score>
+    <limit>8</limit>
+</score>
 <killreward>
     <filter>
         <all>
@@ -22,9 +25,6 @@
     </filter>
     <item amount = "2" material="ender pearl"/>
 </killreward>
-<score>
-    <limit>8</limit>
-</score>
 <spawns>
     <spawn team="slender" kit="slender-kit">
         <regions>
@@ -75,37 +75,37 @@
     </apply>
 </regions>
 <flags>
-    <flag id="flag-1" name="Page 1" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
+    <flag id="flag-1" name="Page 1" owner="slender" color="white" pickup-filter="only-humans">
         <post permanent="true" owner="slender" yaw="90">199.5,55,77.5</post>
-        <net region="net-region" points="1"/>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-2" name="Page 2" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
+    <flag id="flag-2" name="Page 2" owner="slender" color="white" pickup-filter="only-humans">
         <post permanent="true" owner="slender" yaw="-90">191.5,63,77.5</post>
-        <net region="net-region" points="1"/>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-3" name="Page 3" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
+    <flag id="flag-3" name="Page 3" owner="slender" color="white" pickup-filter="only-humans">
         <post permanent="true" owner="slender" yaw="-180">195.5,78,88.5</post>
-        <net region="net-region" points="1"/>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-4" name="Page 4" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
+    <flag id="flag-4" name="Page 4" owner="slender" color="white" pickup-filter="only-humans">
         <post permanent="true" owner="slender" yaw="0">195.5,78,66.5</post>
-        <net region="net-region" points="1"/>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-5" name="Page 5" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
+    <flag id="flag-5" name="Page 5" owner="slender" color="white" pickup-filter="only-humans">
         <post permanent="true" owner="slender" yaw="-90">184.5,84,77.5</post>
-        <net region="net-region" points="1"/>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-6" name="Page 6" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
+    <flag id="flag-6" name="Page 6" owner="slender" color="white" pickup-filter="only-humans">
         <post permanent="true" owner="slender" yaw="90">206.5,84,77.5</post>
-        <net region="net-region" points="1"/>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-7" name="Page 7" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
+    <flag id="flag-7" name="Page 7" owner="slender" color="white" pickup-filter="only-humans">
         <post permanent="true" owner="slender" yaw="90">200.5,102,77.5</post>
-        <net region="net-region" points="1"/>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
-    <flag id="flag-8" name="Page 8" owner="slender" color="white" pickup-filter="only-humans" permanent="true">
+    <flag id="flag-8" name="Page 8" owner="slender" color="white" pickup-filter="only-humans">
         <post permanent="true" owner="slender" yaw="-90">190.5,102,77.5</post>
-        <net region="net-region" points="1"/>
+        <net region="net-region" points="1" respawn-filter="flag-respawns"/>
     </flag>
 </flags>
 <itemremove>
