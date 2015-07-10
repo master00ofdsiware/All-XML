@@ -12,7 +12,7 @@
 <broadcasts>
     <tip after="1s">Litterbugs can fly, but are not able to exit the gray glass box.</tip>
     <tip after="2s">The litterbugs can only place blocks against the white/black ceiling.</tip>
-    <tip after="4s">Cleaners win when all litter (sand,gravel,anvils) has been cleaned up.</alert>
+    <tip after="4s">Cleaners win when all litter (sand,gravel,anvils) has been cleaned up.</tip>
 </broadcasts>
 <teams>
     <team id="cleaners" color="white" max="5">Cleaners</team>
