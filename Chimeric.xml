@@ -107,6 +107,11 @@
     </filter>
 </filters>
 <regions>
+    <apply block="deny-blocks" message="You have reached the build height limit over the central area.">
+        <region>
+            <cuboid min="-68,27,-oo" max="68,oo,oo"/>
+        </region>
+    </apply>
     <apply enter="only-red-until-monument-gone" message="The monument must be broken before you can enter this area!">
         <region>
             <rectangle min="-oo,-oo" max="-72,oo"/>
