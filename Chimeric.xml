@@ -103,7 +103,6 @@
     <objective id="only-blue-until-monument-gone">red-monument</objective>
 </filters>
 <regions>
-    <
     <apply block="never" message="You have reached the build height limit over the central area.">
         <region>
             <cuboid min="-68,27,-oo" max="68,oo,oo"/>
