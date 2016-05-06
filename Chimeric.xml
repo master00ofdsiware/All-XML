@@ -108,6 +108,14 @@
             <cuboid min="-68,27,-oo" max="68,oo,oo"/>
         </region>
     </apply>
+    <apply block="never" message="You have reached the build height limit over the central area.">
+        <region>
+            <union>
+                <cuboid min="-77,7,-3" max="-83,11,3"/>
+                <cuboid min="77,7,3" max="83,11,-3"/>
+            </union>
+        </region>
+    </apply>
     <apply enter="only-red-until-monument-gone" message="The monument must be broken before you can enter this area!">
         <region>
             <rectangle min="-oo,-oo" max="-72,oo"/>
