@@ -108,7 +108,7 @@
             <cuboid min="-68,27,-oo" max="68,oo,oo"/>
         </region>
     </apply>
-    <apply block="never" message="You have reached the build height limit over the central area.">
+    <apply block="never" message="You may not edit the spawn.">
         <region>
             <union>
                 <cuboid min="-77,7,-3" max="-83,11,3"/>
