@@ -14,18 +14,24 @@
 </teams>
 <maxbuildheight>66</maxbuildheight>
 <spawns>
-    <spawn team="red" kit="red" yaw="-90">
-        <cylinder base="-80,8.5,0" radius="1" height="1"/>
+    <spawn team="red" kit="red-kit" yaw="-90">
+        <region>
+            <cylinder base="-80,9,0" radius="1" height="1"/>
+        </region>
     </spawn>
-    <spawn team="blue" kit="blue" yaw="90">
-        <cylinder base="80,8.5,0" radius="1" height="1"/>
+    <spawn team="blue" kit="blue-kit" yaw="90">
+        <region>
+            <cylinder base="80,9,0" radius="1" height="1"/>
+        </region>
     </spawn>
     <default yaw="180">
-        <cylinder base="0,85.5,3" radius="2" height="1"/>
+        <region>
+            <point>-0,85,1</point>
+        </region>
     </default>
 </spawns>
 <kits>
-    <kit name="spawn">
+    <kit id="spawn">
         <item slot="0">stone sword</item>
         <item slot="1" enchantment="arrow infinite:1">bow</item>
         <item slot="2">stone pickaxe</item>
@@ -35,15 +41,15 @@
         <item slot="6" amount="32">log</item>
         <item slot="7" amount="32">glass</item>
         <item slot="28">arrow</item>
-        <potion duration="5" amplifier="4">regeneration</potion>
+        <potion duration="5" amplifier="5">regeneration</potion>
     </kit>
-    <kit name="blue" parents="spawn">
+    <kit id="blue-kit" parents="spawn">
         <helmet color="0066cc">leather helmet</helmet>
         <chestplate color="0066cc">leather chestplate</chestplate>
         <leggings color="0066cc">leather leggings</leggings>
         <boots color="0066cc">leather boots</boots>
     </kit>
-    <kit name="red" parents="spawn">
+    <kit id="red-kit" parents="spawn">
         <helmet color="cd0000">leather helmet</helmet>
         <chestplate color="cd0000">leather chestplate</chestplate>
         <leggings color="cd0000">leather leggings</leggings>
@@ -69,11 +75,11 @@
     <item>glass</item>
 </itemremove>
 <timelock>on</timelock>
-<destroyables name="Monument" repairable="false" sparks="true" show-progress="true" materials="ender_stone,emerald_block,nether_fence,stained_glass" completion="100%">
-    <destroyable owner="blue">
+<destroyables id="Monument" repairable="false" sparks="true" show-progress="true" materials="ender stone;emerald block;nether fence;stained glass" completion="100%">
+    <destroyable id="blue-monument" name="Monument" owner="blue">
        <region><cylinder base="47.5,19,0.5" radius="2" height="4"/></region>
     </destroyable>
-    <destroyable owner="red">
+    <destroyable id="red-monument" name="Monument" owner="red">
        <region><cylinder base="-47.5,19,-0.5" radius="2" height="4"/></region>
     </destroyable>
 </destroyables>
@@ -88,26 +94,17 @@
     </wool>
 </wools>
 <filters>
-    <filter>
-        <not id="no-void">
-            <void/>
-        </not>
-    </filter>
-    <filter name="only-blue">
-        <team>blue</team>
-    </filter>
-    <filter name="only-red">
-        <team>red</team>
-    </filter>
-    <filter name="only-red-until-monument-gone">
-        <!--Add working filter here-->
-    </filter>
-    <filter name="only-blue-until-monument-gone">
-        <!--Add working filter here-->
-    </filter>
+    <not id="no-void">
+        <void/>
+    </not>
+    <team id="only-blue">blue</team>
+    <team id="only-red">red</team>
+    <objective id="only-red-until-monument-gone">red-monument</objective>
+    <objective id="only-blue-until-monument-gone">red-monument</objective>
 </filters>
 <regions>
-    <apply block="deny-blocks" message="You have reached the build height limit over the central area.">
+    <
+    <apply block="never" message="You have reached the build height limit over the central area.">
         <region>
             <cuboid min="-68,27,-oo" max="68,oo,oo"/>
         </region>
@@ -141,3 +138,4 @@
         </region>
     </apply>
 </regions>
+</map>
