@@ -1,6 +1,6 @@
 <map proto="1.4.0">
 <name>Chimeric</name>
-<version>1.0</version>
+<version>1.0.1</version>
 <objective>Destroy the other team's monument, then capture their wool and return it to your base.</objective>
 <authors>
     <author uuid="f876b863-1ccd-4ae2-acad-8a09e2209e81"/>
@@ -8,6 +8,9 @@
     <author uuid="af56fc4a-51d2-4a6e-b020-2c6d272b9cbf"/>
     <!--  Ale  -->
 </authors>
+<broadcasts>
+    <alert after="1s" every="2m">You may not enter the wool room lane until you have broken the other team's monument!</alert>
+</broadcasts>
 <teams>
     <team id="red" color="dark red" max="18">Red</team>
     <team id="blue" color="blue" max="18">Blue</team>
@@ -16,12 +19,12 @@
 <spawns>
     <spawn team="red" kit="red-kit" yaw="-90">
         <region>
-            <cylinder base="-80,9,0" radius="1" height="1"/>
+            <cylinder base="-80,8,0" radius="1" height="0"/>
         </region>
     </spawn>
     <spawn team="blue" kit="blue-kit" yaw="90">
         <region>
-            <cylinder base="80,9,0" radius="1" height="1"/>
+            <cylinder base="80,8,0" radius="1" height="0"/>
         </region>
     </spawn>
     <default yaw="180">
@@ -36,7 +39,7 @@
         <item slot="1" enchantment="arrow infinite:1">bow</item>
         <item slot="2">stone pickaxe</item>
         <item slot="3">stone axe</item>
-        <item slot="4" amount="32" name="`eChicken `for `cFish">cooked fish</item>
+        <item slot="4" amount="32">cooked fish</item>
         <item slot="5" amount="2">golden apple</item>
         <item slot="6" amount="32">log</item>
         <item slot="7" amount="32">glass</item>
@@ -75,7 +78,7 @@
     <item>glass</item>
 </itemremove>
 <timelock>on</timelock>
-<destroyables id="Monument" repairable="false" sparks="true" show-progress="true" materials="ender stone;emerald block;nether fence;stained glass" completion="100%">
+<destroyables id="Monument" repairable="false" sparks="true" show-progress="true" materials="ender stone;emerald block;stained glass" completion="100%">
     <destroyable id="blue-monument" name="Monument" owner="blue">
        <region><cylinder base="47.5,19,0.5" radius="2" height="4"/></region>
     </destroyable>
@@ -99,21 +102,52 @@
     </not>
     <team id="only-blue">blue</team>
     <team id="only-red">red</team>
-    <objective id="only-red-until-monument-gone">red-monument</objective>
-    <objective id="only-blue-until-monument-gone">red-monument</objective>
+    <any id="only-red-until-monument-gone">
+        <team>red</team>
+        <objective>red-monument</objective>
+    </any>
+    <any id="only-blue-until-monument-gone">
+        <team>blue</team>
+        <objective>blue-monument</objective>
+    </any>
 </filters>
 <regions>
+    <apply block="never" message="You may not build below the map!">
+        <region>
+            <union>
+                <cuboid min="85,44,10" max="93,0,-10"/>
+                <cuboid min="87,47,10" max="89,0,-10"/>
+                <cuboid min="89,49,10" max="93,0,-10"/>
+                <cuboid min="93,50,10" max="125,0,-10"/>
+                <!-- Other side -->
+                <cuboid min="-85,44,10" max="-93,0,-10"/>
+                <cuboid min="-87,47,10" max="-89,0,-10"/>
+                <cuboid min="-89,49,10" max="-93,0,-10"/>
+                <cuboid min="-93,50,10" max="-125,0,-10"/>
+            </union>
+        </region>
+    </apply>
+    <apply block="never" message="You may not edit the spawn!">
+        <region>
+            <union>
+                <cuboid min="-83,7,-9" max="-77,12,9"/>
+                <cuboid min="83,7,9" max="77,12,-9"/>
+            </union>
+        </region>
+    </apply>
+    <apply block="always">
+        <region>
+            <union>
+                <rectangle min="75,10" max="125,-10"/>
+                <rectangle min="-125,10" max="-75,-10"/>
+                <rectangle min="-21,-17" max="21,-9"/>
+                <rectangle min="21,17" max="-21,9"/>
+            </union>
+        </region>
+    </apply>
     <apply block="never" message="You have reached the build height limit over the central area.">
         <region>
             <cuboid min="-68,27,-oo" max="68,oo,oo"/>
-        </region>
-    </apply>
-    <apply block="never" message="You may not edit the spawn.">
-        <region>
-            <union>
-                <cuboid min="-77,7,-3" max="-83,11,3"/>
-                <cuboid min="77,7,3" max="83,11,-3"/>
-            </union>
         </region>
     </apply>
     <apply enter="only-red-until-monument-gone" message="The monument must be broken before you can enter this area!">
@@ -126,23 +160,16 @@
             <rectangle min="72,-oo" max="oo,oo"/>
         </region>
     </apply>
-    <apply enter="only-blue" message="You may not enter the other team's wool room!">
+    <apply enter="only-blue" block="only-blue" message="You may not enter the other team's wool room!">
         <region>
             <rectangle min="-oo,-oo" max="-125,oo"/>
         </region>
     </apply>
-    <apply enter="only-red" message="You may not enter the other team's wool room!">
+    <apply enter="only-red" block="only-red" message="You may not enter the other team's wool room!">
         <region>
             <rectangle min="125,-oo" max="oo,oo"/>
         </region>
     </apply>
-    <apply block="no-void" message="You may not modify the void area!">
-        <region>
-            <union>
-                <rectangle min="21,-oo" max="oo,oo"/>
-                <rectangle min="-oo,-oo" max="-21,oo"/>
-            </union>
-        </region>
-    </apply>
+    <apply block="no-void" message="You may not build outside the map!" region="everywhere"/>
 </regions>
 </map>
