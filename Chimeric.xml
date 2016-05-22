@@ -80,10 +80,10 @@
 <timelock>on</timelock>
 <destroyables id="Monument" repairable="false" sparks="true" show-progress="true" materials="ender stone;emerald block;stained glass" completion="100%">
     <destroyable id="blue-monument" name="Monument" owner="blue">
-       <region><cylinder base="47.5,19,0.5" radius="2" height="4"/></region>
+       <region><cylinder base="47.5,16,0.5" radius="2" height="4"/></region>
     </destroyable>
     <destroyable id="red-monument" name="Monument" owner="red">
-       <region><cylinder base="-47.5,19,-0.5" radius="2" height="4"/></region>
+       <region><cylinder base="-47.5,16,-0.5" radius="2" height="4"/></region>
     </destroyable>
 </destroyables>
 <wools team="red">
