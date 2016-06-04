@@ -1,6 +1,6 @@
 <map proto="1.4.0">
 <name>Chimeric</name>
-<version>1.0.1</version>
+<version>1.0.4</version>
 <objective>Destroy the other team's monument, then capture their wool and return it to your base.</objective>
 <authors>
     <author uuid="f876b863-1ccd-4ae2-acad-8a09e2209e81"/>
@@ -10,6 +10,8 @@
 </authors>
 <broadcasts>
     <alert after="1s" every="2m">You may not enter the wool room lane until you have broken the other team's monument!</alert>
+    <tip after="10s" every="2m">The wool room is located on the top of the map, behind each teams' spawns!</tip>
+    <tip after="20s" every="2m">You have Haste II while on your team's side, to help with defense!</tip>
 </broadcasts>
 <teams>
     <team id="red" color="dark red" max="18">Red</team>
@@ -35,30 +37,36 @@
 </spawns>
 <kits>
     <kit id="spawn">
-        <item slot="0">stone sword</item>
-        <item slot="1" enchantment="arrow infinite:1">bow</item>
-        <item slot="2">stone pickaxe</item>
-        <item slot="3">stone axe</item>
+        <item slot="0" unbreakable="true">stone sword</item>
+        <item slot="1" unbreakable="true" enchantment="arrow infinite:1">bow</item>
+        <item slot="2" unbreakable="true">stone pickaxe</item>
+        <item slot="3" unbreakable="true" enchantment="dig speed:2">stone axe</item>
         <item slot="4" amount="32">cooked fish</item>
         <item slot="5" amount="2">golden apple</item>
-        <item slot="6" amount="32">log</item>
+        <item slot="6" amount="16">log</item>
         <item slot="7" amount="32">glass</item>
         <item slot="28">arrow</item>
         <potion duration="5" amplifier="5">regeneration</potion>
     </kit>
     <kit id="blue-kit" parents="spawn">
-        <helmet color="0066cc">leather helmet</helmet>
-        <chestplate color="0066cc">leather chestplate</chestplate>
-        <leggings color="0066cc">leather leggings</leggings>
-        <boots color="0066cc">leather boots</boots>
+        <helmet unbreakable="true" color="0066cc">leather helmet</helmet>
+        <chestplate unbreakable="true" color="0066cc">leather chestplate</chestplate>
+        <leggings unbreakable="true" color="0066cc">leather leggings</leggings>
+        <boots unbreakable="true" color="0066cc">leather boots</boots>
     </kit>
     <kit id="red-kit" parents="spawn">
-        <helmet color="cd0000">leather helmet</helmet>
-        <chestplate color="cd0000">leather chestplate</chestplate>
-        <leggings color="cd0000">leather leggings</leggings>
-        <boots color="cd0000">leather boots</boots>
+        <helmet unbreakable="true" color="cd0000">leather helmet</helmet>
+        <chestplate unbreakable="true" color="cd0000">leather chestplate</chestplate>
+        <leggings unbreakable="true" color="cd0000">leather leggings</leggings>
+        <boots unbreakable="true" color="cd0000">leather boots</boots>
+    </kit>
+    <kit id="home-kit">
+        <potion duration="oo" amplifier="2">haste</potion>
     </kit>
 </kits>
+<kill-reward>
+    <item>golden apple</item>
+</kill-reward>
 <toolrepair>
     <tool>stone sword</tool>
     <tool>bow</tool>
@@ -67,6 +75,7 @@
     <tool>arrow</tool>
 </toolrepair>
 <itemremove>
+    <item>golden apple</item>
     <item>beacon</item>
     <item>leather helmet</item>
     <item>leather chestplate</item>
@@ -135,6 +144,11 @@
             </union>
         </region>
     </apply>
+    <apply block="never" message="You have reached the build height limit over the central area.">
+        <region>
+            <cuboid min="-68,27,-oo" max="68,oo,oo"/>
+        </region>
+    </apply>
     <apply block="always">
         <region>
             <union>
@@ -143,11 +157,6 @@
                 <rectangle min="-21,-17" max="21,-9"/>
                 <rectangle min="21,17" max="-21,9"/>
             </union>
-        </region>
-    </apply>
-    <apply block="never" message="You have reached the build height limit over the central area.">
-        <region>
-            <cuboid min="-68,27,-oo" max="68,oo,oo"/>
         </region>
     </apply>
     <apply enter="only-red-until-monument-gone" message="The monument must be broken before you can enter this area!">
@@ -168,6 +177,16 @@
     <apply enter="only-red" block="only-red" message="You may not enter the other team's wool room!">
         <region>
             <rectangle min="125,-oo" max="oo,oo"/>
+        </region>
+    </apply>
+    <apply filter="only-red" lend-kit="home-kit">
+        <region>
+            <rectangle min="-oo,-oo" max="-21,oo"/>
+        </region>
+    </apply>
+    <apply filter="only-blue" lend-kit="home-kit">
+        <region>
+            <rectangle min="21,-oo" max="oo,oo"/>
         </region>
     </apply>
     <apply block="no-void" message="You may not build outside the map!" region="everywhere"/>
