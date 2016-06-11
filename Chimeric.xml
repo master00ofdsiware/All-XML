@@ -1,6 +1,6 @@
 <map proto="1.4.0">
 <name>Chimeric</name>
-<version>1.0.5</version>
+<version>1.0.7</version>
 <objective>Destroy the other team's monument, then capture their wool and return it to your base.</objective>
 <authors>
     <author uuid="f876b863-1ccd-4ae2-acad-8a09e2209e81"/>
@@ -47,18 +47,19 @@
         <item slot="7" amount="32">glass</item>
         <item slot="28">arrow</item>
         <potion duration="5" amplifier="5">regeneration</potion>
+        <potion duration="oo" amplifier="2">haste</potion>
     </kit>
     <kit id="blue-kit" parents="spawn">
-        <helmet unbreakable="true" color="0066cc">leather helmet</helmet>
-        <chestplate unbreakable="true" color="0066cc">leather chestplate</chestplate>
-        <leggings unbreakable="true" color="0066cc">leather leggings</leggings>
-        <boots unbreakable="true" color="0066cc">leather boots</boots>
+        <helmet unbreakable="true" color="0066cc" enchantment="protection projectile:1">leather helmet</helmet>
+        <chestplate unbreakable="true" color="0066cc" enchantment="protection projectile:1">leather chestplate</chestplate>
+        <leggings unbreakable="true" color="0066cc" enchantment="protection projectile:1">leather leggings</leggings>
+        <boots unbreakable="true" color="0066cc" enchantment="protection projectile:1">leather boots</boots>
     </kit>
     <kit id="red-kit" parents="spawn">
-        <helmet unbreakable="true" color="cd0000">leather helmet</helmet>
-        <chestplate unbreakable="true" color="cd0000">leather chestplate</chestplate>
-        <leggings unbreakable="true" color="cd0000">leather leggings</leggings>
-        <boots unbreakable="true" color="cd0000">leather boots</boots>
+        <helmet unbreakable="true" color="cd0000" enchantment="protection projectile:1">leather helmet</helmet>
+        <chestplate unbreakable="true" color="cd0000" enchantment="protection projectile:1">leather chestplate</chestplate>
+        <leggings unbreakable="true" color="cd0000" enchantment="protection projectile:1">leather leggings</leggings>
+        <boots unbreakable="true" color="cd0000" enchantment="protection projectile:1">leather boots</boots>
     </kit>
     <kit id="home-kit">
         <potion duration="oo" amplifier="2">haste</potion>
