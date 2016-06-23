@@ -433,14 +433,11 @@
         </item>
         <item slot="7" prevent-sharing="true" material="iron pickaxe" lore="Use this pickaxe to|mine the monument!" show-can-destroy="true">
             <can-destroy>
-                <material>fence</material>
-                <material>wood button</material>
-                <material>wood plate</material>
-                <material>wooden door</material>
                 <material>diamond block</material>
             </can-destroy>
         </item>
         <item slot="28">arrow</item>
+        <chestplate material="iron chestplate"/>
         <potion duration="5" amplifier="5">regeneration</potion>
     </kit>
     <kit id="purple-kit" parents="spawn">
