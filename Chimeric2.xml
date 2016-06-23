@@ -39,6 +39,7 @@
 <crafting>
     <disable>workbench</disable>
     <disable>stick</disable>
+    <disable>iron pickaxe</disable>
 </crafting>
 <kits>
     <kit id="spawn">
@@ -431,7 +432,7 @@
                 <all-blocks/>
             </can-place-on>
         </item>
-        <item slot="7" prevent-sharing="true" material="iron pickaxe" lore="Use this pickaxe to|mine the monument!" show-can-destroy="true">
+        <item slot="7" damage="247" prevent-sharing="true" material="iron pickaxe" lore="Use this pickaxe to|mine the monument!|You keep it|when you die." show-can-destroy="true">
             <can-destroy>
                 <material>diamond block</material>
             </can-destroy>
@@ -649,6 +650,9 @@
     <tool>stone axe</tool>
     <tool>arrow</tool>
 </toolrepair>
+<itemkeep>
+    <item>iron pickaxe</item>
+</itemkeep>
 <itemremove>
 <!-- All mined blocks should be on itemremove -->
     <item>golden apple</item>
@@ -661,7 +665,6 @@
     <item>wood</item>
     <item>glass</item>
     <item>diamond block</item>
-    <item>iron pickaxe</item>
     <item>double step</item>
     <item>step</item>
     <item>smooth stairs</item>
