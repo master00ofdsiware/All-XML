@@ -15,8 +15,8 @@
     <!-- ParaSpider -->
 </contributors>
 <teams>
-    <team id="orange" color="orange" max="32">White</team>
-    <team id="purple" color="purple" max="32">Lime</team>
+    <team id="orange" color="orange" max="32">Orange</team>
+    <team id="purple" color="purple" max="32">Purple</team>
 </teams>
 <spawns>
     <spawn team="orange" kit="orange-kit">
