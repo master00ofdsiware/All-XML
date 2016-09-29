@@ -57,7 +57,7 @@
         <helmet unbreakable="true" color="551a8b" >leather helmet</helmet>
         <chestplate unbreakable="true" color="551a8b" >leather chestplate</chestplate>
     </kit>
-</kit>
+</kits>
 <wools>
     <wools team="orange" location="110,30,0">
         <wool color="blue">
