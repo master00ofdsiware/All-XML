@@ -13,6 +13,10 @@
     <!-- cscotz -->
     <contributor contribution="Map Name" uuid="bf331953-4f92-43ee-8abc-7544b8234936"/>
     <!-- ParaSpider -->
+    <contributor contribution="Gameplay Feedback" uuid="621b2aa8-4e5f-4ed8-bd36-0ae2f8952a06"/>
+    <!-- Strangey -->
+    <contributor contribution="Help with Half-Space Regions" uuid="f690a591-348b-482e-a18d-7779d0c0a28c"/>
+    <!-- mitchiii_ -->
 </contributors>
 <teams>
     <team id="orange" color="orange" max="32">Orange</team>
