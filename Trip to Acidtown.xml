@@ -19,8 +19,8 @@
     <!-- mitchiii_ -->
 </contributors>
 <teams>
-    <team id="orange" color="orange" max="32">Orange</team>
-    <team id="purple" color="purple" max="32">Purple</team>
+    <team id="orange" color="gold" max="32">Orange</team>
+    <team id="purple" color="dark purple" max="32">Purple</team>
 </teams>
 <spawns>
     <spawn team="orange" kit="orange-kit">
@@ -104,15 +104,15 @@
     </not>
     <team id="only-orange">orange</team>
     <team id="only-purple">purple</team>
-    <block id="only-iron">iron block</block>
+    <material id="only-iron">iron block</material>
 </filters>
 <portals>
-    <portal destination="orange">
+    <portal destination="portal-orange">
         <region>
             <cuboid min="-109,23,1" max="-108,28,-1"/>
         </region>
     </portal>
-    <portal destination="purple">
+    <portal destination="portal-purple">
         <region>
             <cuboid min="109,23,1" max="108,28,-1"/>
         </region>
@@ -199,8 +199,8 @@
         <half origin="39,0,13" normal="1,0,1"/>
         <half origin="51,0,35" normal="-1,0,-1"/>
     </intersect>
-    <cuboid id="orange" min="-88,22,0" max="-88,22,0"/>
-    <cuboid id="purple" min="88,22,0" max="88,22,0"/>
+    <cuboid id="portal-orange" min="-88,22,0" max="-88,22,0"/>
+    <cuboid id="portal-purple" min="88,22,0" max="88,22,0"/>
     <apply block="always">
         <region>
             <union>
